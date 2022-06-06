@@ -3,6 +3,7 @@ syntax on
 set number
 set autoindent
 set expandtab
+map <C-z> ;
 
 call plug#begin()
 Plug 'morhetz/gruvbox'
