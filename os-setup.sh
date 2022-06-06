@@ -21,17 +21,17 @@ sudo apt install fonts-firacode zsh
 chsh -s $(which zsh)
 
 # Oh-my-zsh
-ZSH_CUSTOM="~/.oh-my-zsh"
+ZSH_CUSTOM=$HOME"/.oh-my-zsh"	
 git clone https://github.com/ohmyzsh/ohmyzsh.git $ZSH_CUSTOM
 # curl https://raw.githubusercontent.com/mxschardt/os-configs/main/.zshrc > ~/.zshrc
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 # Spaceship theme
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "${ZSH_CUSTOM:-~/.oh-my-zsh}/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "${ZSH_CUSTOM:-~/.oh-my-zsh}/themes/spaceship.zsh-theme"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git $ZSH_CUSTOM/themes/spaceship-prompt --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" $ZSH_CUSTOM/themes/spaceship.zsh-theme
 sed -i "s/ZSH_THEME=\".*\"/ZSH_THEME=\"spaceship\"/g" ~/.zshrc
 
 # Plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 sed -i "s/plugins=(.*)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/g" ~/.zshrc
